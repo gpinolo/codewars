@@ -1,10 +1,8 @@
 package na.jd.codewars;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import org.junit.runners.JUnit4;
+
+import static org.junit.Assert.*;
 
 public class TwoSumTest
 {
@@ -18,18 +16,18 @@ public class TwoSumTest
     private void doTest(int[] numbers, int[] expected)
     {
         int target = numbers[expected[0]] + numbers[expected[1]];
-        int[] actual = Solution.twoSum(numbers, target);
-        if ( null == actual )
+        int[] result = Solution.twoSum(numbers, target);
+        if ( null == result )
         {
             System.out.format("Received a null\n");
-            assertNotNull(actual);
+            assertNotNull(null);
         }
-        if ( actual.length != 2 )
+        if ( result.length != 2 )
         {
             System.out.format("Received an array that's not of length 2\n");
             assertTrue(false);
         }
-        int received = numbers[actual[0]] + numbers[actual[1]];
+        int received = numbers[result[0]] + numbers[result[1]];
         assertEquals(target, received);
     }
 }
